@@ -2,9 +2,8 @@
 
 namespace YaangVu\Exceptions;
 
-
 use Exception;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 class GatewayTimeOutException extends BaseException
 {
