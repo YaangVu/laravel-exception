@@ -11,8 +11,13 @@ class BaseException extends HttpResponseException
 {
     protected bool $shouldCapture = false;
 
-    public function __construct(string|array $message, Exception $e, int $code = Response::HTTP_INTERNAL_SERVER_ERROR)
+    public function __construct(string|array $message,
+                                ?Exception   $e = null,
+                                int          $code = Response::HTTP_INTERNAL_SERVER_ERROR)
     {
+        if (is_null($e))
+            $e = new Exception(is_string($message) ? $message : json_encode($message));
+
         if (!is_array($message))
             $message = ['message' => $message];
 

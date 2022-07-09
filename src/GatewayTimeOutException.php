@@ -33,7 +33,7 @@ class GatewayTimeOutException extends BaseException
      * ),
      *
      */
-    public function __construct(string|array $message, Exception $e = null)
+    public function __construct(string|array $message, ?Exception $e = null)
     {
         parent::__construct($message, $e, Response::HTTP_GATEWAY_TIMEOUT);
     }
