@@ -2,12 +2,11 @@
 
 namespace YaangVu\Exceptions;
 
-
 use Exception;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @package App\Exceptions
+ * @package YaangVu\Exceptions
  * @OA\Schema(
  *     schema="GatewayTimeOutException"
  * )
